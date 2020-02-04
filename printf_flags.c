@@ -1,25 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf_utils.c                                     :+:      :+:    :+:   */
+/*   printf_flags.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cjover-n <cjover-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/20 17:38:01 by cjover-n          #+#    #+#             */
-/*   Updated: 2020/02/04 22:00:27 by cjover-n         ###   ########.fr       */
+/*   Created: 2020/01/25 15:48:30 by cjover-n          #+#    #+#             */
+/*   Updated: 2020/02/04 22:04:28 by cjover-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putchar(char c)
+void	ft_flags(t_tab *c)
 {
-	write(1, &c, 1);
+	//if (c->flags == '-')
+	
 }
-
-void	ft_putstr(char *str)
-{
-	while (*str != '\0')
-		ft_putchar(*str++);
-}
-

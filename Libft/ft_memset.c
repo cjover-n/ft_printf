@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf_utils.c                                     :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cjover-n <cjover-n@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cjover-n <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/20 17:38:01 by cjover-n          #+#    #+#             */
-/*   Updated: 2020/02/04 22:00:27 by cjover-n         ###   ########.fr       */
+/*   Created: 2019/11/14 17:16:59 by cjover-n          #+#    #+#             */
+/*   Updated: 2019/11/17 17:58:39 by cjover-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-void	ft_putchar(char c)
+void	*ft_memset(void *b, int c, size_t len)
 {
-	write(1, &c, 1);
-}
+	char	*p;
+	size_t	i;
 
-void	ft_putstr(char *str)
-{
-	while (*str != '\0')
-		ft_putchar(*str++);
+	p = (char*)b;
+	i = 0;
+	if (len)
+	{
+		while (i != len)
+		{
+			p[i] = c;
+			i++;
+		}
+	}
+	return (b);
 }
-

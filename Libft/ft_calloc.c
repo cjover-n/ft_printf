@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf_utils.c                                     :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cjover-n <cjover-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/20 17:38:01 by cjover-n          #+#    #+#             */
-/*   Updated: 2020/02/04 22:00:27 by cjover-n         ###   ########.fr       */
+/*   Created: 2019/11/19 17:46:04 by cjover-n          #+#    #+#             */
+/*   Updated: 2019/11/19 18:45:27 by cjover-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-void	ft_putchar(char c)
+void	*ft_calloc(size_t count, size_t size)
 {
-	write(1, &c, 1);
-}
+	char	*str;
+	size_t	n;
 
-void	ft_putstr(char *str)
-{
-	while (*str != '\0')
-		ft_putchar(*str++);
+	n = count * size;
+	str = malloc(n);
+	if (count == 0 || size == 0)
+	{
+		count = 1;
+		size = 1;
+	}
+	if (str)
+		ft_bzero(str, n);
+	return (str);
 }
-

@@ -1,25 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf_utils.c                                     :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cjover-n <cjover-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/20 17:38:01 by cjover-n          #+#    #+#             */
-/*   Updated: 2020/02/04 22:00:27 by cjover-n         ###   ########.fr       */
+/*   Created: 2019/11/09 21:03:31 by cjover-n          #+#    #+#             */
+/*   Updated: 2019/12/03 18:00:09 by cjover-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-void	ft_putchar(char c)
+size_t		ft_strlcpy(char *dst, const char *src, size_t maxlen)
 {
-	write(1, &c, 1);
-}
+	size_t i;
 
-void	ft_putstr(char *str)
-{
-	while (*str != '\0')
-		ft_putchar(*str++);
+	i = 0;
+	if (dst == NULL && src == NULL)
+		return (0);
+	if (maxlen > 0)
+	{
+		while (src[i] != '\0' && i < (maxlen - 1))
+		{
+			dst[i] = src[i];
+			i++;
+		}
+		dst[i] = '\0';
+	}
+	i = 0;
+	while (src[i] != '\0')
+		i++;
+	return (i);
 }
-

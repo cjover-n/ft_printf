@@ -1,25 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf_utils.c                                     :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cjover-n <cjover-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/20 17:38:01 by cjover-n          #+#    #+#             */
-/*   Updated: 2020/02/04 22:00:27 by cjover-n         ###   ########.fr       */
+/*   Created: 2019/11/06 18:06:06 by cjover-n          #+#    #+#             */
+/*   Updated: 2019/11/25 20:14:57 by cjover-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-void	ft_putchar(char c)
+char	*ft_strrchr(const char *str, int c)
 {
-	write(1, &c, 1);
-}
+	char	*aux;
 
-void	ft_putstr(char *str)
-{
-	while (*str != '\0')
-		ft_putchar(*str++);
+	aux = NULL;
+	if (!str)
+	{
+		while (str)
+			str++;
+		str++;
+	}
+	while (str)
+	{
+		if (*str == c)
+			aux = (char *)str;
+		if (!*str)
+			return (aux);
+		str++;
+	}
+	return (aux);
 }
-

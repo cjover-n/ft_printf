@@ -1,6 +1,7 @@
-#include "printf.h"
+#include "ft_printf.h"
 
 int		main()
 {
-	ft_printf("Hola caracola %s");
+	char *f = "esto es una fiesta";
+	ft_printf("Hola caracola %s", f);
 }

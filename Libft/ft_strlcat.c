@@ -1,25 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf_utils.c                                     :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cjover-n <cjover-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/20 17:38:01 by cjover-n          #+#    #+#             */
-/*   Updated: 2020/02/04 22:00:27 by cjover-n         ###   ########.fr       */
+/*   Created: 2019/11/12 18:34:44 by cjover-n          #+#    #+#             */
+/*   Updated: 2019/12/03 18:32:39 by cjover-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-void	ft_putchar(char c)
+size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
-	write(1, &c, 1);
-}
+	size_t	i;
+	size_t	y;
 
-void	ft_putstr(char *str)
-{
-	while (*str != '\0')
-		ft_putchar(*str++);
+	i = 0;
+	y = 0;
+	while (dest[i] && i < size)
+		i++;
+	while (src[y] && (y + i + 1) < size)
+	{
+		dest[i + y] = src[y];
+		y++;
+	}
+	if (i < size)
+		dest[i + y] = '\0';
+	return (i + ft_strlen(src));
 }
-
