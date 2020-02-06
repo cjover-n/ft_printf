@@ -6,13 +6,16 @@
 /*   By: cjover-n <cjover-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/04 22:02:04 by cjover-n          #+#    #+#             */
-/*   Updated: 2020/02/04 22:10:26 by cjover-n         ###   ########.fr       */
+/*   Updated: 2020/02/05 13:44:43 by cjover-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int     ft_zero(t_tab c)
+int     ft_zero(t_tab *c)
 {
-    
+    c->hyphen = 0;
+    c->plus = 0;
+    c->astsk = 0;
+    c->dot = 0;
 }

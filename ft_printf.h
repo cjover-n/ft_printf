@@ -18,19 +18,29 @@
 # include <string.h>
 # include <stdarg.h>
 # include "../Libft/libft.h"
+# define ALLSIMBOLS "cspdiuxX%-.*0123456789"
+# define CONVERSIONS "cspudixX%"
 
 typedef struct		s_tab
 {
 	const char		*s;
 	int				arr;
-	va_list			hola;
+	va_list			list;
 	int				len;
 	int				count1;
-	char			flags;
+	int				hyphen;
+	int				plus;
+	int				astsk;
+	int				dot;
+	int				r;
+	int				l;
 }					t_tab;
 
 void	ft_putchar(char c);
 void	ft_putstr(char *str);
-int		ft_printf(char *format, ...);
+int		ft_printf(const char *format, ...);
+int		ft_zero(t_tab *c);
+void	ft_flags(t_tab *c);
+void	ft_types(t_tab *c)
 
 #endif
