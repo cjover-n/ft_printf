@@ -3,5 +3,5 @@
 int		main()
 {
 	char *f = "esto es una fiesta";
-	ft_printf("Hola caracola %s", f);
+	ft_printf("Hola caracola %-1.*s", 5, f);
 }

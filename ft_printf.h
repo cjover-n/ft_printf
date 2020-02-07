@@ -17,7 +17,6 @@
 # include <stdio.h>
 # include <string.h>
 # include <stdarg.h>
-# include "../Libft/libft.h"
 # define ALLSIMBOLS "cspdiuxX%-.*0123456789"
 # define CONVERSIONS "cspudixX%"
 
@@ -36,11 +35,16 @@ typedef struct		s_tab
 	int				l;
 }					t_tab;
 
-void	ft_putchar(char c);
-void	ft_putstr(char *str);
+void	ft_putchar(char d, t_tab *c);
+void	ft_putstr(char *str, t_tab *c);
 int		ft_printf(const char *format, ...);
-int		ft_zero(t_tab *c);
+void	ft_zero(t_tab *c);
 void	ft_flags(t_tab *c);
-void	ft_types(t_tab *c)
+void	ft_types(t_tab *c);
+int		ft_stopspaces(const char *str, int i);
+int		ft_atoi(const char *str);
+void	ft_c(t_tab *c);
+void	ft_s(t_tab *c);
+void	ft_id(t_tab *c);
 
 #endif

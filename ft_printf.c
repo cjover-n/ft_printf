@@ -1,11 +1,12 @@
-
+/* ************************************************************************** */
+/*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cjover-n <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: cjover-n <cjover-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/19 16:03:26 by cjover-n          #+#    #+#             */
-/*   Updated: 2020/01/24 17:03:s47 by cjover-n         ###   ########.fr       */
+/*   Created: 2020/02/07 16:49:13 by cjover-n          #+#    #+#             */
+/*   Updated: 2020/02/07 20:48:11 by cjover-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +15,14 @@
 int		ft_printf(const char *format, ...)
 {
 	t_tab	*c;
-	
+
 	if (!(c = (t_tab *)malloc(sizeof(t_tab))))
 		return (-1);
 	va_start(c->list, format);
 	c->s = format;
 	while (c->s[c->arr])
 	{
-		ft_init(c);
+		ft_zero(c);
 		if (c->s[c->arr] == '%')
 		{
 			c->arr++;
@@ -29,7 +30,7 @@ int		ft_printf(const char *format, ...)
 		}
 		else
 		{
-			ft_putchar(c->s[c->arr]);
+			ft_putchar(c->s[c->arr], c);
 			c->count1++;
 		}
 		if (c->s[c->arr])
