@@ -6,7 +6,7 @@
 /*   By: cjover-n <cjover-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/04 22:02:04 by cjover-n          #+#    #+#             */
-/*   Updated: 2020/02/07 20:51:40 by cjover-n         ###   ########.fr       */
+/*   Updated: 2020/02/08 17:01:11 by cjover-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void		ft_zero(t_tab *c)
 {
-	c->hyphen = 0;
-	c->plus = 0;
-	c->astsk = 0;
-	c->dot = 0;
+	c->f_hyphen = 0;
+	c->f_plus = 0;
+	c->f_astsk = 0;
+	c->f_dot = 0;
 }

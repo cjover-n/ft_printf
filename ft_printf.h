@@ -22,27 +22,26 @@
 
 typedef struct		s_tab
 {
-	const char		*s;
-	int				arr;
-	va_list			list;
-	int				len;
-	int				count1;
-	int				hyphen;
-	int				plus;
-	int				astsk;
-	int				dot;
-	int				r;
-	int				l;
+	const char		*s; //donde se mete la cadena formar que se le pasa al printf
+	int				arr; //variable para recorrer cosas
+	va_list			list; //contiene la información necesaria para va_start, va_arg
+	int				len; //retorno de printf
+	int				f_hyphen; //flag de guion
+	int				f_plus; //flag de signo mas
+	int				f_astsk; // flag de asterisco
+	int				f_dot; //flag de punto
+	int				r; //para lo que haya la DERECHA (right) del punto
+	int				l; //para lo que haya a la IZQUIERDA (left) del punto
 }					t_tab;
 
-void	ft_putchar(char d, t_tab *c);
-void	ft_putstr(char *str, t_tab *c);
+void	ft_putchar(const char d, t_tab *c);
+void	ft_putstr(const char *str);
 int		ft_printf(const char *format, ...);
 void	ft_zero(t_tab *c);
 void	ft_flags(t_tab *c);
 void	ft_types(t_tab *c);
-int		ft_stopspaces(const char *str, int i);
-int		ft_atoi(const char *str);
+int		ft_atoi_print(t_tab *c);
+char	*ft_itoabase(t_tab *c);
 void	ft_c(t_tab *c);
 void	ft_s(t_tab *c);
 void	ft_id(t_tab *c);

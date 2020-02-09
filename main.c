@@ -1,7 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cjover-n <cjover-n@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/02/08 23:43:45 by cjover-n          #+#    #+#             */
+/*   Updated: 2020/02/09 12:17:17 by cjover-n         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
-int		main()
+int		main(void)
 {
-	char *f = "esto es una fiesta";
-	ft_printf("Hola caracola %-1.*s", 5, f);
+	char *f;
+	int	n;
+
+	f = "las violetas azules";
+	n = 10;
+	ft_printf("Las rosas son rojas %i", n);
 }
