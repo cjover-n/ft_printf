@@ -6,7 +6,7 @@
 /*   By: cjover-n <cjover-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/07 16:49:13 by cjover-n          #+#    #+#             */
-/*   Updated: 2020/02/08 17:15:23 by cjover-n         ###   ########.fr       */
+/*   Updated: 2020/02/11 23:19:20 by cjover-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ int		ft_printf(const char *format, ...)
 		return (-1); //hace malloc para el tipo declarado en el struct y si no lo hace se sale con -1
 	va_start(c->list, format); //permite el acceso a argumentos de funciones variádica
 	c->s = format; //se mete la cadena format a c->s (que es un const char)
+	c->arr = 0;
 	while (c->s[c->arr]) //se crea un array que tiene como base el format y como índice la variable para recorrer cosas
 	{//mientras haya cosas en este format...
 		ft_zero(c); //se inicializan los flags a cero
@@ -30,7 +31,7 @@ int		ft_printf(const char *format, ...)
 		}
 		else//si no encuentra el porcentaje...
 		{
-			ft_putchar(c->s[c->arr], c);//simplemente pinta caracteres
+			ft_putchar(c->s[c->arr]);//simplemente pinta caracteres
 			c->len++;//esto no lo tengo del todo claro, pero debería ir aumentando el contador del final
 		}
 		if (c->s[c->arr])//que mientras que siga habiendo letras que leer...

@@ -6,16 +6,15 @@
 /*   By: cjover-n <cjover-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/20 17:38:01 by cjover-n          #+#    #+#             */
-/*   Updated: 2020/02/09 12:00:34 by cjover-n         ###   ########.fr       */
+/*   Updated: 2020/02/11 20:18:22 by cjover-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putchar(const char d, t_tab *c)
+void	ft_putchar(const char d)
 {
 	write(1, &d, 1);
-	c->len++;
 }
 
 void	ft_putstr(const char *str)

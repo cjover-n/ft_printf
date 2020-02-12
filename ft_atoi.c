@@ -6,7 +6,7 @@
 /*   By: cjover-n <cjover-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 19:29:30 by cjover-n          #+#    #+#             */
-/*   Updated: 2020/02/09 03:23:53 by cjover-n         ###   ########.fr       */
+/*   Updated: 2020/02/12 18:26:18 by cjover-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int		ft_atoi_print(t_tab *c)
 	long int	num;
 
 	num = 0;
-	while (c->s[c->arr] >= '0' || c->s[c->arr] <= '9')
+	while (c->s[c->arr] >= '0' && c->s[c->arr] <= '9')
 	{
 		num *= 10;
 		num += c->s[c->arr] - '0';

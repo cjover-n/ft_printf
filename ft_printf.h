@@ -17,8 +17,6 @@
 # include <stdio.h>
 # include <string.h>
 # include <stdarg.h>
-# define ALLSIMBOLS "cspdiuxX%-.*0123456789"
-# define CONVERSIONS "cspudixX%"
 
 typedef struct		s_tab
 {
@@ -30,11 +28,13 @@ typedef struct		s_tab
 	int				f_plus; //flag de signo mas
 	int				f_astsk; // flag de asterisco
 	int				f_dot; //flag de punto
+	int				f_zero;
 	int				r; //para lo que haya la DERECHA (right) del punto
 	int				l; //para lo que haya a la IZQUIERDA (left) del punto
+	int				num; //para pasarlo al itoabase
 }					t_tab;
 
-void	ft_putchar(const char d, t_tab *c);
+void	ft_putchar(const char d);
 void	ft_putstr(const char *str);
 int		ft_printf(const char *format, ...);
 void	ft_zero(t_tab *c);
@@ -45,5 +45,6 @@ char	*ft_itoabase(t_tab *c);
 void	ft_c(t_tab *c);
 void	ft_s(t_tab *c);
 void	ft_id(t_tab *c);
+void	ft_do_hyphen(t_tab *c);
 
 #endif
