@@ -12,6 +12,7 @@
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
+# include "Libft/libft.h"
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdio.h>
@@ -46,5 +47,6 @@ void	ft_c(t_tab *c);
 void	ft_s(t_tab *c);
 void	ft_id(t_tab *c);
 void	ft_do_hyphen(t_tab *c);
+
 
 #endif

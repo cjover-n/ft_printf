@@ -6,7 +6,7 @@
 /*   By: cjover-n <cjover-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/12 01:36:00 by cjover-n          #+#    #+#             */
-/*   Updated: 2020/02/12 18:22:09 by cjover-n         ###   ########.fr       */
+/*   Updated: 2020/02/16 19:29:46 by cjover-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ void	ft_flags(t_tab *c)
 	{
 		c->f_hyphen = 1;
 		c->arr++;
+		ft_do_hyphen(c);
 	}
 	if (c->s[c->arr] == '+')
 	{
@@ -29,8 +30,8 @@ void	ft_flags(t_tab *c)
 		c->f_zero = 1;
 		c->arr++;
 	}
-	if (c->s[c->arr] >= '0' && c->s[c->arr] <= '9')
-		c->l = ft_atoi_print(c);
+	//if (c->s[c->arr] >= '0' && c->s[c->arr] <= '9')
+		//ft_width(c);
 	else if (c->s[c->arr] == '*')
 	{
 		c->l = va_arg(c->list, int);
@@ -64,17 +65,17 @@ void	ft_types(t_tab *c)
 		ft_id(c);
 }
 
-/*
 void	ft_do_hyphen(t_tab *c)
 {
-	if (c->s[c->arr] == 'd' || c->s[c->arr] == 'i' )
+	if (c->s[c->arr] >= '0' && c->s[c->arr] >= '9')
 	{
-		c->arr++;
+		ft_atoi_print(c);
 	}
-	else if ()
-	{
-		
-	}
+}
+/*
+void	ft_width(t_tab *c)
+{
+	c->l = ft_atoi_print(c);
 	
 }
 */

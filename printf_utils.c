@@ -6,13 +6,13 @@
 /*   By: cjover-n <cjover-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/20 17:38:01 by cjover-n          #+#    #+#             */
-/*   Updated: 2020/02/11 20:18:22 by cjover-n         ###   ########.fr       */
+/*   Updated: 2020/02/16 19:29:21 by cjover-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putchar(const char d)
+/*void	ft_putchar(const char d)
 {
 	write(1, &d, 1);
 }
@@ -28,7 +28,7 @@ void	ft_putstr(const char *str)
 		i++;
 	}
 }
-
+*/
 void	*ft_calloc(size_t count, size_t size)
 {
 	char	*str;
