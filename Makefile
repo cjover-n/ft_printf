@@ -6,39 +6,47 @@
 #    By: cjover-n <cjover-n@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/02/07 16:28:48 by cjover-n          #+#    #+#              #
-#    Updated: 2020/02/16 19:40:53 by cjover-n         ###   ########.fr        #
+#    Updated: 2020/02/17 16:08:36 by cjover-n         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
 
-HEADER = ft_printf.h
-
 SRC =	ft_printf.c		ft_conversions.c	ft_zero.c	ft_flags.c	\
 		printf_utils.c 	ft_atoi.c
 
-LIBOBJ = Libft/*.c
+SRCLIB =	Libft/ft_isalpha.c		Libft/ft_isprint.c	Libft/ft_strlcpy.c	\
+			Libft/ft_strrchr.c  	Libft/ft_atoi.c		Libft/ft_isascii.c	\
+			Libft/ft_strchr.c		Libft/ft_strlen.c	Libft/ft_tolower.c	\
+			Libft/ft_isalnum.c		Libft/ft_isdigit.c	Libft/ft_strlcat.c	\
+			Libft/ft_strncmp.c		Libft/ft_toupper.c	Libft/ft_memset.c	\
+			Libft/ft_bzero.c		Libft/ft_memcpy.c	Libft/ft_memccpy.c	\
+			Libft/ft_memmove.c		Libft/ft_memchr.c	Libft/ft_memcmp.c	\
+			Libft/ft_strnstr.c		Libft/ft_calloc.c	Libft/ft_strdup.c	\
+			Libft/ft_substr.c		Libft/ft_strjoin.c	Libft/ft_strtrim.c	\
+			Libft/ft_putchar_fd.c   Libft/ft_putstr_fd.c	\
+			Libft/ft_putendl_fd.c	Libft/ft_putnbr_fd.c	\
+			Libft/ft_strmapi.c		Libft/ft_itoa.c			\
+			Libft/ft_split.c		Libft/ft_lstiter.c
 
-OBJ_DIR	= obj/
-
-FLAGS = -Wextra -Wall -Werror -g
+FLAGS = -Wextra -Wall -Werror
 
 OBJ = $(SRC:.c=.o)
+
+OBJLIB = $(SRCLIB:.c=.o)
 
 all: $(NAME)
 
 $(NAME): $(SRC) 
-	@make -c Libft/
-	@cp Libft/libft.a ./$(NAME)
-	@ar rc $(NAME) $(OBJ)
+	@gcc $(FLAGS) -c $(SRCLIB)
+	@mv -f *.o Libft/
+	@gcc $(FLAGS) -c $(SRC)
+	@ar -rc $(NAME) $(OBJ) $(OBJLIB)
 	@ranlib $(NAME)
-
-$(OBJ_DIR)/%.o: $(SRC)/%.c
-	@mkdir -p obj
-	@gcc $(FLAGS) -I $(HEADER) -o $@ -c $<
 
 clean:
 	@rm -f $(OBJ)
+	@rm -f $(OBJLIB)
 
 fclean: clean
 	@rm -f $(NAME)
@@ -47,7 +55,8 @@ re: fclean all
 
 run: ./$(NAME)
 
-test:
-	@gcc $(FLAGS) $(SRC) main.c
+test: re
+	@gcc $(FLAGS) *.c Libft/*.c
+	@./a.out
 
 .PHONY: all clean fclean re

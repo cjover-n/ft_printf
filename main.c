@@ -6,7 +6,7 @@
 /*   By: cjover-n <cjover-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/08 23:43:45 by cjover-n          #+#    #+#             */
-/*   Updated: 2020/02/16 19:16:25 by cjover-n         ###   ########.fr       */
+/*   Updated: 2020/02/16 23:01:52 by cjover-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ int		main(void)
 	n = 42;
 	a = 'F';
 	//ft_printf("Las rosas son rojas %-030.*i\n", 5, n);
-	ft_printf("Esta cadena hace %s\n", f2);
+	ft_printf("Las rosas son rojas %s\n", f1);
+	ft_printf("Esta cadena hace %i\n", 1);
 	ft_printf("Este es el número %i\n", n);
 	ft_printf("Esta es la letra de rendir respeto: %c", a);
 }

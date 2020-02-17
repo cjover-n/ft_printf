@@ -33,8 +33,10 @@ typedef struct		s_tab
 	int				r; //para lo que haya la DERECHA (right) del punto
 	int				l; //para lo que haya a la IZQUIERDA (left) del punto
 	int				num; //para pasarlo al itoabase
+	int				width;
 }					t_tab;
 
+int		ft_printf(const char *format, ...);
 void	ft_putchar(const char d);
 void	ft_putstr(const char *str);
 int		ft_printf(const char *format, ...);
@@ -47,6 +49,6 @@ void	ft_c(t_tab *c);
 void	ft_s(t_tab *c);
 void	ft_id(t_tab *c);
 void	ft_do_hyphen(t_tab *c);
-
+void	ft_width(t_tab *c);
 
 #endif
