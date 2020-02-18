@@ -49,6 +49,6 @@ void	ft_s(t_tab *c);
 void	ft_id(t_tab *c);
 void	ft_do_hyphen(t_tab *c);
 void	ft_width(t_tab *c);
-void	ft_void_filler(t_tab *c, char *str, char *aux);
+void	ft_void_filler(t_tab *c, char *str);
 
 #endif

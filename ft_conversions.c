@@ -6,7 +6,7 @@
 /*   By: cjover-n <cjover-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/07 15:35:55 by cjover-n          #+#    #+#             */
-/*   Updated: 2020/02/18 22:13:10 by cjover-n         ###   ########.fr       */
+/*   Updated: 2020/02/18 22:19:11 by cjover-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,29 +24,26 @@ void	ft_c(t_tab *c)
 void	ft_s(t_tab *c)
 {
 	char	*str;
-	char	*ret;
 
-	ret = NULL;
 	str = va_arg(c->list, char *);
 	ft_zero(c);
-	ft_void_filler(c, str, ret);
+	ft_void_filler(c, str);
 }
 
 void	ft_id(t_tab *c)
 {
 	char	*str;
-	char	*ret;
 
-	ret = NULL;
 	str = ft_itoabase(c);
 	ft_zero(c);
-	ft_void_filler(c, str, ret);
+	ft_void_filler(c, str);
 }
 
-void	ft_void_filler(t_tab *c, char *str, char *ret)
+void	ft_void_filler(t_tab *c, char *str)
 {
 	char	*aux;
 	int		aux2;
+	char	*ret;
 
 	if ((aux2 = c->width - ft_strlen(str)) < 0)//aux2 almacena la diferencia entre el número que marca el "flag" el ancho de la cadena cogida con va_arg
 		aux2 = 0;//si es negativo pasa e imprime todo
