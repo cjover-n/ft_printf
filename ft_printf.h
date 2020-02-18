@@ -39,7 +39,6 @@ typedef struct		s_tab
 int		ft_printf(const char *format, ...);
 void	ft_putchar(const char d);
 void	ft_putstr(const char *str);
-int		ft_printf(const char *format, ...);
 void	ft_zero(t_tab *c);
 void	ft_flags(t_tab *c);
 void	ft_types(t_tab *c);
@@ -50,5 +49,6 @@ void	ft_s(t_tab *c);
 void	ft_id(t_tab *c);
 void	ft_do_hyphen(t_tab *c);
 void	ft_width(t_tab *c);
+char	*ft_void_filler(t_tab *c, char *str, char *aux);
 
 #endif

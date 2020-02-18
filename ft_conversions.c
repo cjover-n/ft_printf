@@ -6,7 +6,7 @@
 /*   By: cjover-n <cjover-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/07 15:35:55 by cjover-n          #+#    #+#             */
-/*   Updated: 2020/02/16 22:05:13 by cjover-n         ###   ########.fr       */
+/*   Updated: 2020/02/18 21:52:26 by cjover-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,18 +23,38 @@ void	ft_c(t_tab *c)
 
 void	ft_s(t_tab *c)
 {
-	char *str;
+	char	*str;
+	char	*ret;
+	char	*aux;
+	int		aux2;
 
 	str = va_arg(c->list, char *);
-	ft_putstr(str);
 	ft_zero(c);
+	if ((aux2 = c->width - ft_strlen(str)) < 0)//aux2 almacena la diferencia entre el número que marca el "flag" el ancho de la cadena cogida con va_arg
+		aux2 = 0;//si es negativo pasa e imprime todo
+	aux = ft_calloc(aux2 + ft_strlen(str) + 1, sizeof(char));//aquí se reserva memoria de chars del tamaño de la diferencia de antes mas la longitud de la cadena
+	aux = ft_memset(aux, ' ', aux2);//rellenar espacio de vacíos
+	ret = ft_strjoin(aux, str);//juntar espacio lleno de vacíos con la cadena
+	ft_putstr(ret);//MAGIA!
+	free(ret);
+	free(aux);
 }
 
 void	ft_id(t_tab *c)
 {
-	char *str;
+	char	*str;
+	char	*ret;
+	char	*aux;
+	int		aux2;
 
 	str = ft_itoabase(c);
-	ft_putstr(str);
 	ft_zero(c);
+	if ((aux2 = c->width - ft_strlen(str)) < 0)//aux2 almacena la diferencia entre el número que marca el "flag" el ancho de la cadena cogida con va_arg
+		aux2 = 0;//si es negativo pasa e imprime todo
+	aux = ft_calloc(aux2 + ft_strlen(str) + 1, sizeof(char));//aquí se reserva memoria de chars del tamaño de la diferencia de antes mas la longitud de la cadena
+	aux = ft_memset(aux, ' ', aux2);//rellenar espacio de vacíos
+	ret = ft_strjoin(str, aux);//juntar espacio lleno de vacíos con la cadena
+	ft_putstr(ret);//MAGIA!
+	free(ret);
+	free(aux);
 }

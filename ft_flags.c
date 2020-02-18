@@ -6,7 +6,7 @@
 /*   By: cjover-n <cjover-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/12 01:36:00 by cjover-n          #+#    #+#             */
-/*   Updated: 2020/02/17 15:46:38 by cjover-n         ###   ########.fr       */
+/*   Updated: 2020/02/18 18:37:48 by cjover-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,7 @@ void	ft_flags(t_tab *c)
 	}
 	if (ft_isdigit(c->s[c->arr]))
 	{
-		c->arr++;
-		c->len++;
-	//	ft_width(c);
+		c->width = ft_atoi_print(c);
 	}
 	else if (c->s[c->arr] == '*')
 	{
@@ -77,15 +75,3 @@ void	ft_do_hyphen(t_tab *c)
 		ft_atoi_print(c);
 	}
 }
-/*
-void	ft_width(t_tab *c)
-{
-	char *ret;
-	char *aux;
-
-	c->width = ft_atoi_print(c);
-	aux = ft_calloc(c->width + 1, sizeof(char));
-
-	ret = ft_strjoin((aux - ft_strlen()));
-}
-*/

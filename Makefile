@@ -6,7 +6,7 @@
 #    By: cjover-n <cjover-n@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/02/07 16:28:48 by cjover-n          #+#    #+#              #
-#    Updated: 2020/02/17 16:08:36 by cjover-n         ###   ########.fr        #
+#    Updated: 2020/02/18 21:23:45 by cjover-n         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,12 +24,13 @@ SRCLIB =	Libft/ft_isalpha.c		Libft/ft_isprint.c	Libft/ft_strlcpy.c	\
 			Libft/ft_memmove.c		Libft/ft_memchr.c	Libft/ft_memcmp.c	\
 			Libft/ft_strnstr.c		Libft/ft_calloc.c	Libft/ft_strdup.c	\
 			Libft/ft_substr.c		Libft/ft_strjoin.c	Libft/ft_strtrim.c	\
+			Libft/ft_strcat.c		Libft/ft_strcpy.c		\
 			Libft/ft_putchar_fd.c   Libft/ft_putstr_fd.c	\
 			Libft/ft_putendl_fd.c	Libft/ft_putnbr_fd.c	\
 			Libft/ft_strmapi.c		Libft/ft_itoa.c			\
 			Libft/ft_split.c		Libft/ft_lstiter.c
 
-FLAGS = -Wextra -Wall -Werror
+FLAGS = -Wextra -Wall -Werror -g
 
 OBJ = $(SRC:.c=.o)
 
