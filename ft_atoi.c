@@ -6,7 +6,7 @@
 /*   By: cjover-n <cjover-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 19:29:30 by cjover-n          #+#    #+#             */
-/*   Updated: 2020/02/12 18:26:18 by cjover-n         ###   ########.fr       */
+/*   Updated: 2020/02/24 13:00:02 by cjover-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ int		ft_atoi_print(t_tab *c)
 	return (num);
 }
 
-int		ft_count(int n, int base)
+int		ft_count(long unsigned int n, int base)
 {
-	int		ret;
+	long long int		ret;
 
 	ret = 1;
 	while (n / base > 0)
@@ -43,14 +43,19 @@ int		ft_count(int n, int base)
 
 char	*ft_itoabase(t_tab *c)
 {
-	char		*ret;
-	long int	n;
-	int			pos;
-	int			base;
+	char			*ret;
+	long long int	n;
+	int				pos;
+	int				base;
 
-	base = 10;
+	if (c->s[c->arr] == 'i' || c->s[c->arr] == 'd' || c->s[c->arr] == 'u')
+		base = 10;
+	if (c->s[c->arr] == 'x' || c->s[c->arr] == 'X' || c->s[c->arr] == 'p')
+		base = 16;
 	if (c->s[c->arr] == 'i' || c->s[c->arr] == 'd')
 		n = va_arg(c->list, int);
+	else if (c->s[c->arr] == 'p')
+		n = va_arg(c->list, long unsigned int);
 	else
 		n = va_arg(c->list, unsigned int);
 	pos = ft_count(n, base);
