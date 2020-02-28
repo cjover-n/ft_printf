@@ -6,7 +6,7 @@
 /*   By: cjover-n <cjover-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/07 16:49:13 by cjover-n          #+#    #+#             */
-/*   Updated: 2020/02/17 15:48:43 by cjover-n         ###   ########.fr       */
+/*   Updated: 2020/02/28 19:01:30 by cjover-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int		ft_printf(const char *format, ...)
 	va_start(c.list, format); //permite el acceso a argumentos de funciones variádica
 	c.s = format; //se mete la cadena format a c->s (que es un const char)
 	c.arr = 0;
+	c.len = 0;
 	while (c.s[c.arr]) //se crea un array que tiene como base el format y como índice la variable para recorrer cosas
 	{//mientras haya cosas en este format...
 		ft_zero(&c); //se inicializan los flags a cero
@@ -31,8 +32,7 @@ int		ft_printf(const char *format, ...)
 		}
 		else//si no encuentra el porcentaje...
 		{
-			ft_putchar(c.s[c.arr]);//simplemente pinta caracteres
-			c.len++;//esto no lo tengo del todo claro, pero debería ir aumentando el contador del final
+			ft_putchar(&c, c.s[c.arr]);//simplemente pinta caracteres
 		}
 		if (c.s[c.arr])//que mientras que siga habiendo letras que leer...
 			c.arr++;//recorra el format
