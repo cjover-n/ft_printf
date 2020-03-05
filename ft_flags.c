@@ -6,7 +6,7 @@
 /*   By: cjover-n <cjover-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/12 01:36:00 by cjover-n          #+#    #+#             */
-/*   Updated: 2020/02/28 19:12:12 by cjover-n         ###   ########.fr       */
+/*   Updated: 2020/03/05 18:36:02 by cjover-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,9 +57,10 @@ void	ft_flags(t_tab *c)
 	}
 	if (c->s[c->arr] == '%')
 	{
-		ft_math(c, "%");
+		ft_igor(c, "%");
+		ft_miki(c);
 		ft_putchar(c, '%');
-		ft_void_filler(c);
+		ft_alex(c);
 		c->arr++;
 	}
 	ft_types(c);

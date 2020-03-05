@@ -6,7 +6,7 @@
 /*   By: cjover-n <cjover-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/08 23:43:45 by cjover-n          #+#    #+#             */
-/*   Updated: 2020/02/28 19:07:12 by cjover-n         ###   ########.fr       */
+/*   Updated: 2020/03/05 19:48:39 by cjover-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,6 @@ int		main(void)
 	//ft_printf("Esta cadena hace %3i p\n", 1);
 	//ft_printf("Este es el número %5.3i\n", n);
 
-	printf("Printf retorna: %i\n", printf("%5%"));
-	printf("ft_printf retorna: %i\n", ft_printf("%5%"));
+	printf("Printf retorna: %i\n", printf("%05i", 5));
+	printf("ft_printf retorna: %i\n", ft_printf("%05i", 5));
 }

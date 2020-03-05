@@ -6,14 +6,14 @@
 #    By: cjover-n <cjover-n@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/02/07 16:28:48 by cjover-n          #+#    #+#              #
-#    Updated: 2020/02/18 21:23:45 by cjover-n         ###   ########.fr        #
+#    Updated: 2020/02/28 12:53:26 by cjover-n         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
 
 SRC =	ft_printf.c		ft_conversions.c	ft_zero.c	ft_flags.c	\
-		printf_utils.c 	ft_atoi.c
+		printf_utils.c 	ft_atoi.c	ft_filler.c
 
 SRCLIB =	Libft/ft_isalpha.c		Libft/ft_isprint.c	Libft/ft_strlcpy.c	\
 			Libft/ft_strrchr.c  	Libft/ft_atoi.c		Libft/ft_isascii.c	\
