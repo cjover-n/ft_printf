@@ -6,7 +6,7 @@
 #    By: cjover-n <cjover-n@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/02/07 16:28:48 by cjover-n          #+#    #+#              #
-#    Updated: 2020/02/28 12:53:26 by cjover-n         ###   ########.fr        #
+#    Updated: 2020/03/10 18:41:34 by cjover-n         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,7 @@ SRCLIB =	Libft/ft_isalpha.c		Libft/ft_isprint.c	Libft/ft_strlcpy.c	\
 			Libft/ft_strmapi.c		Libft/ft_itoa.c			\
 			Libft/ft_split.c		Libft/ft_lstiter.c
 
-FLAGS = -Wextra -Wall -Werror -g
+FLAGS = -Wextra -Wall -Werror
 
 OBJ = $(SRC:.c=.o)
 
@@ -57,7 +57,7 @@ re: fclean all
 run: ./$(NAME)
 
 test: re
-	@gcc $(FLAGS) *.c Libft/*.c
+	@gcc -g *.c Libft/*.c
 	@./a.out
 
 .PHONY: all clean fclean re

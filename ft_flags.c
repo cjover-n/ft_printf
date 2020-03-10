@@ -6,7 +6,7 @@
 /*   By: cjover-n <cjover-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/12 01:36:00 by cjover-n          #+#    #+#             */
-/*   Updated: 2020/03/05 18:36:02 by cjover-n         ###   ########.fr       */
+/*   Updated: 2020/03/10 18:48:15 by cjover-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,11 @@
 
 void	ft_flags(t_tab *c)
 {
+	while (c->s[c->arr] == '0')
+	{
+		c->f_zero = 1;
+		c->arr++;
+	}
 	if (c->s[c->arr] == ' ')
 	{
 		c->f_space = 1;
@@ -27,11 +32,6 @@ void	ft_flags(t_tab *c)
 	if (c->s[c->arr] == '+')
 	{
 		c->f_plus = 1;
-		c->arr++;
-	}
-	if (c->s[c->arr] == '0')
-	{
-		c->f_zero = 1;
 		c->arr++;
 	}
 	if (ft_isdigit(c->s[c->arr]) == 1)

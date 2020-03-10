@@ -6,7 +6,7 @@
 /*   By: cjover-n <cjover-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 19:29:30 by cjover-n          #+#    #+#             */
-/*   Updated: 2020/02/28 15:41:51 by cjover-n         ###   ########.fr       */
+/*   Updated: 2020/03/10 19:18:04 by cjover-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,35 +43,30 @@ int		ft_count(long unsigned int n, int base)
 
 char	*ft_itoabase(t_tab *c)
 {
-	char			*ret;
-	long long int	n;
-	int				pos;
-	int				base;
-
 	if (c->s[c->arr] == 'i' || c->s[c->arr] == 'd' || c->s[c->arr] == 'u')
-		base = 10;
+		c->itoa_base = 10;
 	if (c->s[c->arr] == 'x' || c->s[c->arr] == 'X' || c->s[c->arr] == 'p')
-		base = 16;
+		c->itoa_base = 16;
 	if (c->s[c->arr] == 'i' || c->s[c->arr] == 'd')
-		n = va_arg(c->list, int);
+		c->itoa_n = va_arg(c->list, int);
 	else if (c->s[c->arr] == 'p')
-		n = va_arg(c->list, long unsigned int);
+		c->itoa_n = va_arg(c->list, long unsigned int);
 	else
-		n = va_arg(c->list, unsigned int);
-	pos = ft_count(n, base);
-	if (!(ret = (char *)malloc(sizeof(char) * pos + 1)))
+		c->itoa_n = va_arg(c->list, unsigned int);
+	c->itoa_pos = ft_count(c->itoa_n, c->itoa_base);
+	if (!(c->itoa_ret = (char *)malloc(sizeof(char) * c->itoa_pos + 1)))
 		return (NULL);
-	ret[pos--] = '\0';
-	while (pos >= 0)
+	c->itoa_ret[c->itoa_pos--] = '\0';
+	while (c->itoa_pos >= 0)
 	{
-		if (n % base <= 9)
-			ret[pos] = n % base + '0';
-		else if ((n % base > 9) && c->s[c->arr] == 'X')
-			ret[pos] = n % base + 55;
+		if (c->itoa_n % c->itoa_base <= 9)
+			c->itoa_ret[c->itoa_pos] = c->itoa_n % c->itoa_base + '0';
+		else if ((c->itoa_n % c->itoa_base > 9) && c->s[c->arr] == 'X')
+			c->itoa_ret[c->itoa_pos] = c->itoa_n % c->itoa_base + 55;
 		else
-			ret[pos] = n % base + 87;
-		n = n / base;
-		pos--;
+			c->itoa_ret[c->itoa_pos] = c->itoa_n % c->itoa_base + 87;
+		c->itoa_n = c->itoa_n / c->itoa_base;
+		c->itoa_pos--;
 	}
-	return (ret);
+	return (c->itoa_ret);
 }

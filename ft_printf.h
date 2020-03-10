@@ -37,6 +37,11 @@ typedef struct		s_tab
 	int				width;
 	int				f_miki;
 	int				f_igor;
+	char			*itoa_ret;
+	long long int	itoa_n;
+	int				itoa_pos;
+	int				itoa_base;
+	int				itoa_neg;
 }					t_tab;
 
 int		ft_printf(const char *format, ...);
@@ -55,5 +60,7 @@ void	ft_width(t_tab *c);
 void 	ft_igor(t_tab *c, char *str);
 void 	ft_miki(t_tab *c);
 void 	ft_alex(t_tab *c);
+void	ft_cote(t_tab *c, char *str);
+//void	ft_vulpes(t_tab *c, char *str);
 
 #endif
