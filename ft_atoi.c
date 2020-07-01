@@ -6,7 +6,7 @@
 /*   By: cjover-n <cjover-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 19:29:30 by cjover-n          #+#    #+#             */
-/*   Updated: 2020/03/10 19:18:04 by cjover-n         ###   ########.fr       */
+/*   Updated: 2020/07/01 19:57:28 by cjover-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,19 @@ int		ft_count(long unsigned int n, int base)
 	return (ret);
 }
 
+int		ft_countneg(long int n, int base)
+{
+	long long int		ret;
+
+	ret = 1;
+	while (n / base > 0)
+	{
+		ret++;
+		n = n / base;
+	}
+	return (ret);
+}
+
 char	*ft_itoabase(t_tab *c)
 {
 	if (c->s[c->arr] == 'i' || c->s[c->arr] == 'd' || c->s[c->arr] == 'u')
@@ -53,7 +66,10 @@ char	*ft_itoabase(t_tab *c)
 		c->itoa_n = va_arg(c->list, long unsigned int);
 	else
 		c->itoa_n = va_arg(c->list, unsigned int);
-	c->itoa_pos = ft_count(c->itoa_n, c->itoa_base);
+	if (c->itoa_n >= 0)
+		c->itoa_pos = ft_count(c->itoa_n, c->itoa_base);
+	else
+		c->itoa_pos = ft_countneg(c->itoa_n, c->itoa_base);
 	if (!(c->itoa_ret = (char *)malloc(sizeof(char) * c->itoa_pos + 1)))
 		return (NULL);
 	c->itoa_ret[c->itoa_pos--] = '\0';
@@ -65,6 +81,8 @@ char	*ft_itoabase(t_tab *c)
 			c->itoa_ret[c->itoa_pos] = c->itoa_n % c->itoa_base + 55;
 		else
 			c->itoa_ret[c->itoa_pos] = c->itoa_n % c->itoa_base + 87;
+		if (c->itoa_n < 0)
+			ft_putchar(c, '-');
 		c->itoa_n = c->itoa_n / c->itoa_base;
 		c->itoa_pos--;
 	}
