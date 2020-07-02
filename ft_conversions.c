@@ -6,7 +6,7 @@
 /*   By: cjover-n <cjover-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/07 15:35:55 by cjover-n          #+#    #+#             */
-/*   Updated: 2020/03/10 19:09:27 by cjover-n         ###   ########.fr       */
+/*   Updated: 2020/07/02 20:11:47 by cjover-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	ft_id(t_tab *c)
 
 	str = ft_itoabase(c);
 	ft_igor(c, str);
-	if (str < 0)
+	if (c->itoa_neg > 0)
 		ft_putchar(c, '-');
 	ft_miki(c);
 	ft_putstr(c, str);

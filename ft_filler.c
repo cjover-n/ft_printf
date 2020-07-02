@@ -6,7 +6,7 @@
 /*   By: cjover-n <cjover-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/19 17:54:55 by cjover-n          #+#    #+#             */
-/*   Updated: 2020/06/29 16:23:57 by cjover-n         ###   ########.fr       */
+/*   Updated: 2020/07/02 20:45:11 by cjover-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_miki(t_tab *c)
 {
+	if (c->itoa_neg > 0 && c->f_dot == 0)
+		c->f_miki--;
 	while (c->f_miki-- > 0)
 	{
 		ft_putchar(c, '0');
@@ -38,6 +40,8 @@ void	ft_igor(t_tab *c, char *str)
 		c->f_miki = c->f_igor;
 		c->f_igor = 0;
 	}
+	if (c->itoa_neg > 0)
+		c->f_igor--;
 	if (c->f_hyphen == 0)
 	{
 		while (c->f_igor-- > 0)
