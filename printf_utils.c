@@ -6,7 +6,7 @@
 /*   By: cjover-n <cjover-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/20 17:38:01 by cjover-n          #+#    #+#             */
-/*   Updated: 2020/07/06 18:52:41 by cjover-n         ###   ########.fr       */
+/*   Updated: 2020/07/06 20:31:18 by cjover-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,15 @@ void	ft_putstr(t_tab *c, const char *str)
 		write(1, " ", 1);
 		c->len++;
 		return ;
+	}
+	if (c->s[c->arr] == 'p')
+	{
+		while (str[i] != '\0')
+		{
+			write(1, "0x", 2);
+			c->len = c->len + 2;
+			i++;
+		}
 	}
 	while (str[i] != '\0' && (c->r-- || c->s[c->arr] != 's'))
 	{
