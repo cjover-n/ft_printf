@@ -6,7 +6,7 @@
 /*   By: cjover-n <cjover-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/20 17:38:01 by cjover-n          #+#    #+#             */
-/*   Updated: 2020/03/10 17:18:29 by cjover-n         ###   ########.fr       */
+/*   Updated: 2020/07/06 18:52:41 by cjover-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,16 @@ void	ft_putstr(t_tab *c, const char *str)
 	int i;
 
 	i = 0;
+	if (c->f_zero > 0 && c->f_dot > 0 && str[i] == '0' && c->f_hyphen <= 0)
+		ft_putchar(c, '0');
+	if (str[i] == '0' && c->f_dot > 0 && c->l <= 0 && c->r <= 0)
+		return ;
+	if (str[i] == '0' && c->f_dot > 0 && c->l && c->r <= 0)
+	{
+		write(1, " ", 1);
+		c->len++;
+		return ;
+	}
 	while (str[i] != '\0' && (c->r-- || c->s[c->arr] != 's'))
 	{
 		write(1, &str[i], 1);

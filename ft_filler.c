@@ -6,7 +6,7 @@
 /*   By: cjover-n <cjover-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/19 17:54:55 by cjover-n          #+#    #+#             */
-/*   Updated: 2020/07/02 20:45:11 by cjover-n         ###   ########.fr       */
+/*   Updated: 2020/07/06 18:08:45 by cjover-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	ft_igor(t_tab *c, char *str)
 		c->r = (int)ft_strlen(str);
 	if (c->s[c->arr] == 's' && (c->f_igor = c->l - c->r) < 0)
 		c->f_igor = 0;
-	if (c->f_zero && c->f_hyphen == 0)
+	if (c->f_zero && c->f_hyphen == 0 && c->l > (int)ft_strlen(str))
 	{
 		c->f_miki = c->f_igor;
 		c->f_igor = 0;
@@ -44,6 +44,17 @@ void	ft_igor(t_tab *c, char *str)
 		c->f_igor--;
 	if (c->f_hyphen == 0)
 	{
+		if (c->f_zero == 1 && c->f_dot == 1)
+		{
+			c->f_igor = c->l - c->r;
+			if (c->itoa_neg > 0 && c->l > (int)ft_strlen(str))
+			{
+				c->f_igor--;
+				c->f_miki = c->l - c->r - (int)ft_strlen(str);
+			}
+			if (c->r < (int)ft_strlen(str))
+				c->f_igor--;
+		}
 		while (c->f_igor-- > 0)
 			ft_putchar(c, ' ');
 	}
