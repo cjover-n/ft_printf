@@ -29,6 +29,7 @@ typedef struct		s_tab
 	int				f_plus; //flag de signo mas
 	int				f_astsk; // flag de asterisco
 	int				f_dot; //flag de punto
+	int				f_pad; //flag de almohadilla
 	int				f_zero;
 	int				f_space;
 	int				r; //para lo que haya la DERECHA (right) del punto
@@ -42,6 +43,8 @@ typedef struct		s_tab
 	int				itoa_pos;
 	int				itoa_base;
 	int				itoa_neg;
+	int				f_null;
+	int				f_control;
 }					t_tab;
 
 int		ft_printf(const char *format, ...);
@@ -60,7 +63,6 @@ void	ft_width(t_tab *c);
 void 	ft_igor(t_tab *c, char *str);
 void 	ft_miki(t_tab *c);
 void 	ft_alex(t_tab *c);
-void	ft_cote(t_tab *c, char *str);
-//void	ft_vulpes(t_tab *c, char *str);
+void	ft_hexadecimal(t_tab *c, const char *str);
 
 #endif

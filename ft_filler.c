@@ -6,7 +6,7 @@
 /*   By: cjover-n <cjover-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/19 17:54:55 by cjover-n          #+#    #+#             */
-/*   Updated: 2020/07/06 18:08:45 by cjover-n         ###   ########.fr       */
+/*   Updated: 2020/07/07 20:03:52 by cjover-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ void	ft_igor(t_tab *c, char *str)
 		c->f_miki = 0;
 	if ((c->f_igor = c->l - c->f_miki - ft_strlen(str)) < 0)
 		c->f_igor = 0;
+	else if (c->s[c->arr] == 'p' && str != NULL)
+		c->f_igor = c->f_igor - 2;
 	if (c->s[c->arr] == 's' && ((c->r > (int)ft_strlen(str) ||
 		(c->r == 0 && c->f_dot == 0))))
 		c->r = (int)ft_strlen(str);
@@ -71,28 +73,26 @@ void	ft_alex(t_tab *c)
 	}
 }
 
-/*
-void	ft_cote(t_tab *c, char *str)
+void	ft_hexadecimal(t_tab *c, const char *str)
 {
-	if (c->f_zero == 0)
+	int i;
+
+	i = 0;
+	if (c->s[c->arr] == 'p' || (c->s[c->arr] == 'x' && c->f_pad == 1))
 	{
-		if (ft_strlen(str) > 1)
-			c->f_igor = c->f_igor - ft_strlen(str);
-		while (c->f_igor-- > 0)
-			ft_putchar(c, ' ');
+		write(1, "0x", 2);
+		c->len = c->len + 2;
 	}
-	else
+	if (c->s[c->arr] == 'X' && c->f_pad == 1)
 	{
-		while (c->f_igor-- > 0)
-			ft_putchar(c, '0');
+		write(1, "0X", 2);
+		c->len = c->len + 2;
+		while (str[i] != '\0' && (c->r-- || c->s[c->arr] != 's'))
+		{
+			ft_toupper(write(1, &str[i], 1));
+			c->len++;
+			i++;
+		}
+		return ;
 	}
 }
-
-void	ft_vulpes(t_tab *c, char *str)
-{
-	char	*str2;
-
-	str2 = ft_strdup(ft_itoa(c->r));
-	ft_strtrim(str, str2);
-}
-*/
