@@ -45,6 +45,7 @@ typedef struct		s_tab
 	int				itoa_neg;
 	int				f_null;
 	int				f_control;
+	int				f_signpointer;
 }					t_tab;
 
 int		ft_printf(const char *format, ...);

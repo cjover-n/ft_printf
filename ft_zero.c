@@ -6,7 +6,7 @@
 /*   By: cjover-n <cjover-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/04 22:02:04 by cjover-n          #+#    #+#             */
-/*   Updated: 2020/07/07 19:56:40 by cjover-n         ###   ########.fr       */
+/*   Updated: 2020/07/08 17:02:26 by cjover-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,4 +26,5 @@ void		ft_zero(t_tab *c)
 	c->itoa_neg = 0;
 	c->f_null = 0;
 	c->f_control = 0;
+	c->f_signpointer = 0;
 }

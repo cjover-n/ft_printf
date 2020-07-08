@@ -6,7 +6,7 @@
 /*   By: cjover-n <cjover-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/19 17:54:55 by cjover-n          #+#    #+#             */
-/*   Updated: 2020/07/07 20:03:52 by cjover-n         ###   ########.fr       */
+/*   Updated: 2020/07/08 18:09:05 by cjover-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,12 @@ void	ft_miki(t_tab *c)
 {
 	if (c->itoa_neg > 0 && c->f_dot == 0)
 		c->f_miki--;
+	if (c->s[c->arr] == 'p' && c->f_miki > 0 && c->r && c->f_dot > 0)
+	{
+		c->f_signpointer = 1;
+		write(1, "0x", 2);
+		c->len = c->len + 2;
+	}
 	while (c->f_miki-- > 0)
 	{
 		ft_putchar(c, '0');
@@ -78,10 +84,13 @@ void	ft_hexadecimal(t_tab *c, const char *str)
 	int i;
 
 	i = 0;
-	if (c->s[c->arr] == 'p' || (c->s[c->arr] == 'x' && c->f_pad == 1))
+	if (c->f_signpointer == 0)
 	{
-		write(1, "0x", 2);
-		c->len = c->len + 2;
+		if (c->s[c->arr] == 'p' || (c->s[c->arr] == 'x' && c->f_pad == 1))
+		{
+			write(1, "0x", 2);
+			c->len = c->len + 2;
+		}
 	}
 	if (c->s[c->arr] == 'X' && c->f_pad == 1)
 	{
@@ -96,3 +105,4 @@ void	ft_hexadecimal(t_tab *c, const char *str)
 		return ;
 	}
 }
+
