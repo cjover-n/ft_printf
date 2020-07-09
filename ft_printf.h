@@ -32,6 +32,7 @@ typedef struct		s_tab
 	int				f_pad; //flag de almohadilla
 	int				f_zero;
 	int				f_space;
+	int				f_percent;
 	int				r; //para lo que haya la DERECHA (right) del punto
 	int				l; //para lo que haya a la IZQUIERDA (left) del punto
 	int				num; //para pasarlo al itoabase
@@ -51,7 +52,7 @@ typedef struct		s_tab
 int		ft_printf(const char *format, ...);
 void	ft_putchar(t_tab *c, const char d);
 void	ft_putstr(t_tab *c, const char *str);
-void	ft_zero(t_tab *c);
+void	ft_initialize(t_tab *c);
 void	ft_flags(t_tab *c);
 void	ft_types(t_tab *c);
 int		ft_atoi_print(t_tab *c);

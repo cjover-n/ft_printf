@@ -6,7 +6,7 @@
 /*   By: cjover-n <cjover-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/19 17:54:55 by cjover-n          #+#    #+#             */
-/*   Updated: 2020/07/08 18:09:05 by cjover-n         ###   ########.fr       */
+/*   Updated: 2020/07/09 20:28:36 by cjover-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	ft_igor(t_tab *c, char *str)
 		c->f_miki = 0;
 	else if (c->s[c->arr] == 's' && (c->f_miki = c->r) > (int)ft_strlen(str))
 		c->f_miki = 0;
-	if ((c->f_igor = c->l - c->f_miki - ft_strlen(str)) < 0)
+	if ((c->f_igor = c->l - c->f_miki - (int)ft_strlen(str)) < 0)
 		c->f_igor = 0;
 	else if (c->s[c->arr] == 'p' && str != NULL)
 		c->f_igor = c->f_igor - 2;
@@ -43,7 +43,7 @@ void	ft_igor(t_tab *c, char *str)
 		c->r = (int)ft_strlen(str);
 	if (c->s[c->arr] == 's' && (c->f_igor = c->l - c->r) < 0)
 		c->f_igor = 0;
-	if (c->f_zero && c->f_hyphen == 0 && c->l > (int)ft_strlen(str))
+	if (c->f_zero && c->f_hyphen <= 0 && c->l > (int)ft_strlen(str))
 	{
 		c->f_miki = c->f_igor;
 		c->f_igor = 0;

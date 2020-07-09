@@ -6,7 +6,7 @@
 /*   By: cjover-n <cjover-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/07 15:35:55 by cjover-n          #+#    #+#             */
-/*   Updated: 2020/07/07 20:02:48 by cjover-n         ###   ########.fr       */
+/*   Updated: 2020/07/09 20:10:26 by cjover-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,24 @@ void	ft_c(t_tab *c)
 	int f;
 
 	f = va_arg(c->list, int);
+	if (c->l > 1 && c->f_hyphen <= 0)
+	{
+		c->f_igor = c->l - 1;
+		while (c->f_igor-- > 0)
+			ft_putchar(c, ' ');
+	}
+	else if (c->f_hyphen > 0)
+	{
+		ft_putchar(c, f);
+		c->f_igor = c->l - 1;
+		while (c->f_igor-- > 0)
+		{
+			ft_putchar(c, ' ');
+		}
+		return ;
+	}
 	ft_putchar(c, f);
-	ft_zero(c);
+	ft_initialize(c);
 }
 
 void	ft_s(t_tab *c)

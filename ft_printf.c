@@ -6,7 +6,7 @@
 /*   By: cjover-n <cjover-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/07 16:49:13 by cjover-n          #+#    #+#             */
-/*   Updated: 2020/02/28 19:01:30 by cjover-n         ###   ########.fr       */
+/*   Updated: 2020/07/09 19:08:59 by cjover-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int		ft_printf(const char *format, ...)
 	c.len = 0;
 	while (c.s[c.arr]) //se crea un array que tiene como base el format y como índice la variable para recorrer cosas
 	{//mientras haya cosas en este format...
-		ft_zero(&c); //se inicializan los flags a cero
+		ft_initialize(&c); //se inicializan los flags a cero
 		if (c.s[c.arr] == '%') //si encuenta el símbolo de porcentaje...
 		{
 			c.arr++; //con esto salta el símbolo de porcentaje, para no imprimirlo
