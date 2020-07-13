@@ -6,7 +6,7 @@
 /*   By: cjover-n <cjover-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/12 01:36:00 by cjover-n          #+#    #+#             */
-/*   Updated: 2020/07/09 19:08:06 by cjover-n         ###   ########.fr       */
+/*   Updated: 2020/07/13 19:46:08 by cjover-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ void	ft_flags(t_tab *c)
 	}
 	else if (c->s[c->arr] == '*')
 	{
+		c->f_astsk = 1;
 		c->l = va_arg(c->list, int);
 		c->arr++;
 	}

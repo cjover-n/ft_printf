@@ -6,7 +6,7 @@
 /*   By: cjover-n <cjover-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/19 17:54:55 by cjover-n          #+#    #+#             */
-/*   Updated: 2020/07/09 20:28:36 by cjover-n         ###   ########.fr       */
+/*   Updated: 2020/07/13 19:53:13 by cjover-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,13 +41,15 @@ void	ft_igor(t_tab *c, char *str)
 	if (c->s[c->arr] == 's' && ((c->r > (int)ft_strlen(str) ||
 		(c->r == 0 && c->f_dot == 0))))
 		c->r = (int)ft_strlen(str);
-	if (c->s[c->arr] == 's' && (c->f_igor = c->l - c->r) < 0)
+	if ((c->s[c->arr] == 's' && ((c->f_igor = c->l - c->r) < 0)) || c->r < 0)
 		c->f_igor = 0;
-	if (c->f_zero && c->f_hyphen <= 0 && c->l > (int)ft_strlen(str))
+	if (c->f_zero && c->f_hyphen <= 0 && c->f_dot <= 0 && c->l > (int)ft_strlen(str))
 	{
 		c->f_miki = c->f_igor;
 		c->f_igor = 0;
 	}
+	if (c->f_zero && c->f_hyphen <= 0 && c->f_dot > 0 && ft_strncmp(str, "0", 1) <= 0)
+		c->f_miki = c->f_miki - 1;
 	if (c->itoa_neg > 0)
 		c->f_igor--;
 	if (c->f_hyphen == 0)
@@ -70,7 +72,7 @@ void	ft_igor(t_tab *c, char *str)
 
 void	ft_alex(t_tab *c)
 {
-	if (c->f_hyphen == 1)
+	if (c->f_hyphen > 0 || c->f_astsk > 0)
 	{
 		while (c->f_igor-- > 0)
 		{
