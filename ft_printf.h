@@ -63,6 +63,7 @@ void	ft_id(t_tab *c);
 void	ft_do_hyphen(t_tab *c);
 void	ft_width(t_tab *c);
 void 	ft_igor(t_tab *c, char *str);
+void	ft_coco(t_tab *c, char *str);
 void 	ft_miki(t_tab *c);
 void 	ft_alex(t_tab *c);
 void	ft_hexadecimal(t_tab *c, const char *str);

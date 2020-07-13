@@ -6,7 +6,7 @@
 /*   By: cjover-n <cjover-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/07 16:49:13 by cjover-n          #+#    #+#             */
-/*   Updated: 2020/07/09 19:08:59 by cjover-n         ###   ########.fr       */
+/*   Updated: 2020/07/13 20:14:07 by cjover-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,28 +16,25 @@ int		ft_printf(const char *format, ...)
 {
 	t_tab	c;
 
-	//if (!(c = (t_tab *)malloc(sizeof(t_tab))))
-	//	return (-1); //hace malloc para el tipo declarado en el struct y si no lo hace se sale con -1
-	va_start(c.list, format); //permite el acceso a argumentos de funciones variádica
-	c.s = format; //se mete la cadena format a c->s (que es un const char)
+	va_start(c.list, format);
+	c.s = format;
 	c.arr = 0;
 	c.len = 0;
-	while (c.s[c.arr]) //se crea un array que tiene como base el format y como índice la variable para recorrer cosas
-	{//mientras haya cosas en este format...
-		ft_initialize(&c); //se inicializan los flags a cero
-		if (c.s[c.arr] == '%') //si encuenta el símbolo de porcentaje...
+	while (c.s[c.arr])
+	{
+		ft_initialize(&c);
+		if (c.s[c.arr] == '%')
 		{
-			c.arr++; //con esto salta el símbolo de porcentaje, para no imprimirlo
-			ft_flags(&c); //MEOLLO DEL ASUNTO, lectura de flags
+			c.arr++;
+			ft_flags(&c);
 		}
-		else//si no encuentra el porcentaje...
+		else
 		{
-			ft_putchar(&c, c.s[c.arr]);//simplemente pinta caracteres
+			ft_putchar(&c, c.s[c.arr]);
 		}
-		if (c.s[c.arr])//que mientras que siga habiendo letras que leer...
-			c.arr++;//recorra el format
+		if (c.s[c.arr])
+			c.arr++;
 	}
-	va_end(c.list);//variable de terminar los va_args
-	//free(c);//variable de librerar la memoria del struct
-	return (c.len);//return número de caracteres leídos
+	va_end(c.list);
+	return (c.len);
 }
