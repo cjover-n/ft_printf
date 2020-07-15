@@ -6,7 +6,7 @@
 /*   By: cjover-n <cjover-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 19:29:30 by cjover-n          #+#    #+#             */
-/*   Updated: 2020/07/13 20:29:00 by cjover-n         ###   ########.fr       */
+/*   Updated: 2020/07/15 16:53:40 by cjover-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,12 @@ char	*ft_itoabase(t_tab *c)
 		c->itoa_pos = ft_countneg(c->itoa_n, c->itoa_base);
 	if (!(c->itoa_ret = (char *)malloc(sizeof(char) * c->itoa_pos + 1)))
 		return (NULL);
+	ft_itoabase_logic(c);
+	return (c->itoa_ret);
+}
+
+void	*ft_itoabase_logic(t_tab *c)
+{
 	c->itoa_ret[c->itoa_pos--] = '\0';
 	while (c->itoa_pos >= 0)
 	{

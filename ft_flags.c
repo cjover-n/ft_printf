@@ -6,13 +6,13 @@
 /*   By: cjover-n <cjover-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/12 01:36:00 by cjover-n          #+#    #+#             */
-/*   Updated: 2020/07/13 20:14:27 by cjover-n         ###   ########.fr       */
+/*   Updated: 2020/07/15 17:01:03 by cjover-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_flags(t_tab *c)
+void	ft_flags1(t_tab *c)
 {
 	while (c->s[c->arr] == '0')
 	{
@@ -34,6 +34,11 @@ void	ft_flags(t_tab *c)
 		c->f_plus = 1;
 		c->arr++;
 	}
+	ft_flags2(c);
+}
+
+void	ft_flags2(t_tab *c)
+{
 	if (ft_isdigit(c->s[c->arr]) == 1)
 	{
 		c->l = ft_atoi_print(c);
@@ -54,6 +59,11 @@ void	ft_flags(t_tab *c)
 		c->f_pad = 1;
 		c->arr++;
 	}
+	ft_flags3(c);
+}
+
+void	ft_flags3(t_tab *c)
+{
 	if (c->s[c->arr] >= '0' && c->s[c->arr] <= '9' && c->f_dot == 1)
 		c->r = ft_atoi_print(c);
 	else if (c->s[c->arr] == '*' && c->f_dot == 1)

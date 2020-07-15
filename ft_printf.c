@@ -6,7 +6,7 @@
 /*   By: cjover-n <cjover-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/07 16:49:13 by cjover-n          #+#    #+#             */
-/*   Updated: 2020/07/13 20:14:07 by cjover-n         ###   ########.fr       */
+/*   Updated: 2020/07/15 16:55:37 by cjover-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int		ft_printf(const char *format, ...)
 		if (c.s[c.arr] == '%')
 		{
 			c.arr++;
-			ft_flags(&c);
+			ft_flags1(&c);
 		}
 		else
 		{
