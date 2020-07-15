@@ -6,7 +6,7 @@
 /*   By: cjover-n <cjover-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/07 15:35:55 by cjover-n          #+#    #+#             */
-/*   Updated: 2020/07/13 19:35:24 by cjover-n         ###   ########.fr       */
+/*   Updated: 2020/07/15 20:34:34 by cjover-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	ft_s(t_tab *c)
 	ft_igor(c, str);
 	if (c->f_dot == 0)
 		ft_miki(c);
-	ft_putstr(c, str);
+	ft_putstr_pre(c, str);
 	if (c->f_astsk > 0 && c->l < 0)
 		c->f_igor = (c->l * -1) - ft_strlen(str);
 	ft_alex(c);
@@ -60,10 +60,13 @@ void	ft_id(t_tab *c)
 	ft_igor(c, str);
 	if (c->itoa_neg > 0)
 		ft_putchar(c, '-');
+	else if (c->f_plus > 0)
+		ft_putchar(c, '+');
 	if (c->f_zero > 0 && c->f_dot > 0 && c->r < (int)ft_strlen(str))
 		c->f_miki = 0;
 	ft_miki(c);
-	ft_putstr(c, str);
+	c->r < 0 ? c->r = c->r * -1 : 0;
+	ft_putstr_pre(c, str);
 	if (c->f_astsk > 0 && c->l < 0)
 		c->f_igor = (c->l * -1) - ft_strlen(str);
 	if (c->f_astsk > 0 && c->l < 0 && c->itoa_neg > 0)

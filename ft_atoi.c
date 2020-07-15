@@ -6,7 +6,7 @@
 /*   By: cjover-n <cjover-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 19:29:30 by cjover-n          #+#    #+#             */
-/*   Updated: 2020/07/15 16:53:40 by cjover-n         ###   ########.fr       */
+/*   Updated: 2020/07/15 18:49:05 by cjover-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ char	*ft_itoabase(t_tab *c)
 		c->itoa_base = 10;
 	if (c->s[c->arr] == 'x' || c->s[c->arr] == 'X' || c->s[c->arr] == 'p')
 		c->itoa_base = 16;
+	c->s[c->arr] == 'o' ? c->itoa_base = 8 : 0;
 	if (c->s[c->arr] == 'i' || c->s[c->arr] == 'd')
 		c->itoa_n = va_arg(c->list, int);
 	else if (c->s[c->arr] == 'p')

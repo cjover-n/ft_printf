@@ -6,7 +6,7 @@
 /*   By: cjover-n <cjover-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/12 01:36:00 by cjover-n          #+#    #+#             */
-/*   Updated: 2020/07/15 17:01:03 by cjover-n         ###   ########.fr       */
+/*   Updated: 2020/07/15 20:10:44 by cjover-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ void	ft_flags1(t_tab *c)
 	if (c->s[c->arr] == ' ')
 	{
 		c->f_space = 1;
+		ft_putchar(c, ' ');
 		c->arr++;
 	}
 	if (c->s[c->arr] == '-')
@@ -95,6 +96,7 @@ void	ft_types(t_tab *c)
 	else if (c->s[c->arr] == 's')
 		ft_s(c);
 	else if (c->s[c->arr] == 'i' || c->s[c->arr] == 'd' || c->s[c->arr] == 'u'
-		|| c->s[c->arr] == 'X' || c->s[c->arr] == 'x' || c->s[c->arr] == 'p')
+		|| c->s[c->arr] == 'X' || c->s[c->arr] == 'x' || c->s[c->arr] == 'p'
+		|| c->s[c->arr] == 'o')
 		ft_id(c);
 }

@@ -6,7 +6,7 @@
 /*   By: cjover-n <cjover-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/19 17:54:55 by cjover-n          #+#    #+#             */
-/*   Updated: 2020/07/13 20:12:57 by cjover-n         ###   ########.fr       */
+/*   Updated: 2020/07/15 19:11:40 by cjover-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,7 @@ void	ft_coco(t_tab *c, char *str)
 			if (c->r < (int)ft_strlen(str))
 				c->f_igor--;
 		}
+		c->f_plus > 0 ? c->f_igor-- : 0;
 		while (c->f_igor-- > 0)
 			ft_putchar(c, ' ');
 	}

@@ -47,10 +47,12 @@ typedef struct		s_tab
 	int				f_null;
 	int				f_control;
 	int				f_signpointer;
+	int				final_i;
 }					t_tab;
 
 int		ft_printf(const char *format, ...);
 void	ft_putchar(t_tab *c, const char d);
+void	ft_putstr_pre(t_tab *c, const char *str);
 void	ft_putstr(t_tab *c, const char *str);
 void	ft_initialize(t_tab *c);
 void	ft_flags1(t_tab *c);
@@ -70,5 +72,6 @@ void	ft_coco(t_tab *c, char *str);
 void 	ft_miki(t_tab *c);
 void 	ft_alex(t_tab *c);
 void	ft_hexadecimal(t_tab *c, const char *str);
+void	ft_bonus(t_tab *c);
 
 #endif
