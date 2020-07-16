@@ -6,7 +6,7 @@
 /*   By: cjover-n <cjover-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/20 17:38:01 by cjover-n          #+#    #+#             */
-/*   Updated: 2020/07/15 20:34:42 by cjover-n         ###   ########.fr       */
+/*   Updated: 2020/07/16 16:50:35 by cjover-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ void	ft_putchar(t_tab *c, const char d)
 
 void	ft_putstr_pre(t_tab *c, const char *str)
 {
-	if (c->f_zero > 0 && c->f_dot > 0 && str[c->final_i] == '0' && c->f_hyphen <= 0)
+	if (c->f_zero > 0 && c->f_dot > 0 && str[c->final_i] == '0' &&
+		c->f_hyphen <= 0)
 		ft_putchar(c, '0');
 	if (str[c->final_i] == '0' && c->f_dot > 0 && c->l <= 0 &&
 		c->r <= 0 && c->s[c->arr] != 'p')
@@ -49,7 +50,8 @@ void	ft_putstr_pre(t_tab *c, const char *str)
 void	ft_putstr(t_tab *c, const char *str)
 {
 	ft_hexadecimal(c, str);
-	while (str[c->final_i] != '\0' && (c->r-- || c->s[c->arr] != 's') && c->f_null <= 0)
+	while (str[c->final_i] != '\0' && (c->r-- || c->s[c->arr] != 's') &&
+		c->f_null <= 0)
 	{
 		write(1, &str[c->final_i], 1);
 		c->len++;

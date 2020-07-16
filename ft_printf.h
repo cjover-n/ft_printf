@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                           :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cjover-n <cjover-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/20 17:32:03 by cjover-n          #+#    #+#             */
-/*   Updated: 2020/02/04 18:53:25 by cjover-n         ###   ########.fr       */
+/*   Updated: 2020/07/16 16:54:09 by cjover-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,21 +21,21 @@
 
 typedef struct		s_tab
 {
-	const char		*s; //donde se mete la cadena formar que se le pasa al printf
-	int				arr; //variable para recorrer cosas
-	va_list			list; //contiene la información necesaria para va_start, va_arg
-	int				len; //retorno de printf
-	int				f_hyphen; //flag de guion
-	int				f_plus; //flag de signo mas
-	int				f_astsk; // flag de asterisco
-	int				f_dot; //flag de punto
-	int				f_pad; //flag de almohadilla
+	const char		*s;
+	int				arr;
+	va_list			list;
+	int				len;
+	int				f_hyphen;
+	int				f_plus;
+	int				f_astsk;
+	int				f_dot;
+	int				f_pad;
 	int				f_zero;
 	int				f_space;
 	int				f_percent;
-	int				r; //para lo que haya la DERECHA (right) del punto
-	int				l; //para lo que haya a la IZQUIERDA (left) del punto
-	int				num; //para pasarlo al itoabase
+	int				r;
+	int				l;
+	int				num;
 	int				width;
 	int				f_miki;
 	int				f_igor;
@@ -50,28 +50,28 @@ typedef struct		s_tab
 	int				final_i;
 }					t_tab;
 
-int		ft_printf(const char *format, ...);
-void	ft_putchar(t_tab *c, const char d);
-void	ft_putstr_pre(t_tab *c, const char *str);
-void	ft_putstr(t_tab *c, const char *str);
-void	ft_initialize(t_tab *c);
-void	ft_flags1(t_tab *c);
-void	ft_flags2(t_tab *c);
-void	ft_flags3(t_tab *c);
-void	ft_types(t_tab *c);
-int		ft_atoi_print(t_tab *c);
-char	*ft_itoabase(t_tab *c);
-void	*ft_itoabase_logic(t_tab *c);
-void	ft_c(t_tab *c);
-void	ft_s(t_tab *c);
-void	ft_id(t_tab *c);
-void	ft_do_hyphen(t_tab *c);
-void	ft_width(t_tab *c);
-void 	ft_igor(t_tab *c, char *str);
-void	ft_coco(t_tab *c, char *str);
-void 	ft_miki(t_tab *c);
-void 	ft_alex(t_tab *c);
-void	ft_hexadecimal(t_tab *c, const char *str);
-void	ft_bonus(t_tab *c);
+int					ft_printf(const char *format, ...);
+void				ft_putchar(t_tab *c, const char d);
+void				ft_putstr_pre(t_tab *c, const char *str);
+void				ft_putstr(t_tab *c, const char *str);
+void				ft_initialize(t_tab *c);
+void				ft_flags1(t_tab *c);
+void				ft_flags2(t_tab *c);
+void				ft_flags3(t_tab *c);
+void				ft_types(t_tab *c);
+int					ft_atoi_print(t_tab *c);
+char				*ft_itoabase(t_tab *c);
+void				*ft_itoabase_logic(t_tab *c);
+void				ft_c(t_tab *c);
+void				ft_s(t_tab *c);
+void				ft_id(t_tab *c);
+void				ft_do_hyphen(t_tab *c);
+void				ft_width(t_tab *c);
+void				ft_igor(t_tab *c, char *str);
+void				ft_coco(t_tab *c, char *str);
+void				ft_miki(t_tab *c);
+void				ft_alex(t_tab *c);
+void				ft_hexadecimal(t_tab *c, const char *str);
+void				ft_bonus(t_tab *c);
 
 #endif
