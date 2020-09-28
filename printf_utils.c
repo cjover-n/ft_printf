@@ -6,7 +6,7 @@
 /*   By: cjover-n <cjover-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/20 17:38:01 by cjover-n          #+#    #+#             */
-/*   Updated: 2020/09/28 23:59:10 by cjover-n         ###   ########.fr       */
+/*   Updated: 2020/09/29 00:55:37 by cjover-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,10 +44,10 @@ void	ft_putstr_pre(t_tab *c, const char *str)
 		else
 			return ;
 	}
-	ft_putstr(c, str);
+	ft_putstr_print(c, str);
 }
 
-void	ft_putstr(t_tab *c, const char *str)
+void	ft_putstr_print(t_tab *c, const char *str)
 {
 	ft_hexadecimal(c, str);
 	while (str[c->final_i] != '\0' && (c->r-- || c->s[c->arr] != 's') &&
