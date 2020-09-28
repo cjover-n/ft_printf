@@ -6,7 +6,7 @@
 /*   By: cjover-n <cjover-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/07 16:49:13 by cjover-n          #+#    #+#             */
-/*   Updated: 2020/07/15 16:55:37 by cjover-n         ###   ########.fr       */
+/*   Updated: 2020/09/28 23:59:08 by cjover-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int		ft_printf(const char *format, ...)
 		}
 		else
 		{
-			ft_putchar(&c, c.s[c.arr]);
+			ft_putchar_print(&c, c.s[c.arr]);
 		}
 		if (c.s[c.arr])
 			c.arr++;

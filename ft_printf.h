@@ -6,7 +6,7 @@
 /*   By: cjover-n <cjover-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/20 17:32:03 by cjover-n          #+#    #+#             */
-/*   Updated: 2020/07/16 16:54:09 by cjover-n         ###   ########.fr       */
+/*   Updated: 2020/09/28 23:55:01 by cjover-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ typedef struct		s_tab
 }					t_tab;
 
 int					ft_printf(const char *format, ...);
-void				ft_putchar(t_tab *c, const char d);
+void				ft_putchar_print(t_tab *c, const char d);
 void				ft_putstr_pre(t_tab *c, const char *str);
 void				ft_putstr(t_tab *c, const char *str);
 void				ft_initialize(t_tab *c);

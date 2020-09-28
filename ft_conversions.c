@@ -6,7 +6,7 @@
 /*   By: cjover-n <cjover-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/07 15:35:55 by cjover-n          #+#    #+#             */
-/*   Updated: 2020/07/15 20:34:34 by cjover-n         ###   ########.fr       */
+/*   Updated: 2020/09/28 23:59:05 by cjover-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,19 +21,19 @@ void	ft_c(t_tab *c)
 	{
 		c->f_igor = c->l - 1;
 		while (c->f_igor-- > 0)
-			ft_putchar(c, ' ');
+			ft_putchar_print(c, ' ');
 	}
 	else if (c->f_hyphen > 0)
 	{
-		ft_putchar(c, f);
+		ft_putchar_print(c, f);
 		c->f_igor = c->l - 1;
 		while (c->f_igor-- > 0)
 		{
-			ft_putchar(c, ' ');
+			ft_putchar_print(c, ' ');
 		}
 		return ;
 	}
-	ft_putchar(c, f);
+	ft_putchar_print(c, f);
 	ft_initialize(c);
 }
 
@@ -59,9 +59,9 @@ void	ft_id(t_tab *c)
 	str = ft_itoabase(c);
 	ft_igor(c, str);
 	if (c->itoa_neg > 0)
-		ft_putchar(c, '-');
+		ft_putchar_print(c, '-');
 	else if (c->f_plus > 0)
-		ft_putchar(c, '+');
+		ft_putchar_print(c, '+');
 	if (c->f_zero > 0 && c->f_dot > 0 && c->r < (int)ft_strlen(str))
 		c->f_miki = 0;
 	ft_miki(c);
